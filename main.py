@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
 
-try:
-    import httpx
-except ImportError:
-    import subprocess
-    import sys
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "httpx"])
-    import httpx
-
 import datetime as dt
 import httpx
 import json
