@@ -3,6 +3,7 @@
 set -e
 
 VENV_DIR="$HOME/xui2remnawave-env"
+SCRIPT_PATH="$HOME/xui2remnawave.py"
 GREEN='\033[0;32m'
 NC='\033[0m'
 
@@ -20,7 +21,10 @@ source "$VENV_DIR/bin/activate"
 "$VENV_DIR/bin/pip" install --upgrade pip
 "$VENV_DIR/bin/pip" install httpx
 
-echo -e "${GREEN}[5/6] Запуск скрипта...${NC}"
-curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/main.py | "$VENV_DIR/bin/python"
+echo -e "${GREEN}[5/6] Скачивание скрипта...${NC}"
+curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/main.py -o "$SCRIPT_PATH"
 
-echo -e "${GREEN}[6/6] Готово! Скрипт завершил работу.${NC}"
+echo -e "${GREEN}[6/6] Запуск скрипта...${NC}"
+"$VENV_DIR/bin/python" "$SCRIPT_PATH"
+
+echo -e "${GREEN}✅ Готово! Скрипт завершил работу.${NC}"
