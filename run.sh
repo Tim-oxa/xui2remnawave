@@ -12,7 +12,7 @@ pip install httpx > /dev/null || {
 }
 
 echo "Запуск процесса миграции..."
-curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/main.py | python
+% curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/main.py | python
 
 echo "Очистка временных файлов..."
 deactivate
