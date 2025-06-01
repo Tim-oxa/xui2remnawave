@@ -44,6 +44,8 @@ for user in users:
 
     uid = user["id"]
 
+    data.setdefault("vlessUuid", user["id"])
+
     if user["expiryTime"]:
         data.setdefault("expireAt", dt.datetime.fromtimestamp(user["expiryTime"] / 1000).isoformat())
     else:
