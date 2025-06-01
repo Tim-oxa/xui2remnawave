@@ -1,21 +1,22 @@
 #!/bin/bash
+set -e
 
 echo "Подготовка окружения..."
 VENV_DIR=$(mktemp -d)
-python3 -m venv "$VENV_DIR" || exit 1
-source "$VENV_DIR/bin/activate" || exit 1
+python3 -m venv "$VENV_DIR"
+source "$VENV_DIR/bin/activate"
 
 echo "Установка зависимостей..."
-pip install httpx > /dev/null || {
-    echo "Ошибка установки httpx"
-    exit 1
-}
+pip install httpx
 
-echo "Запуск процесса миграции..."
-curl -sSL https://github.com/Tim-oxa/xui2remnawave/raw/refs/heads/main/main.py | python < /dev/tty > /dev/tty
+echo "Скачивание скрипта..."
+curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/main.py -o main.py
+
+echo "Запуск..."
+python main.py < /dev/tty > /dev/tty
 
 echo "Очистка временных файлов..."
 deactivate
-rm -rf "$VENV_DIR"
+rm -rf "$VENV_DIR" main.py
 
 echo "Миграция завершена!"
