@@ -11,15 +11,8 @@ pip install httpx > /dev/null || {
     exit 1
 }
 
-echo "Загрузка скрипта миграции..."
-SCRIPT_FILE="$VENV_DIR/main.py"
-curl -s "https://github.com/Tim-oxa/xui2remnawave/raw/main/main.py" -o "$SCRIPT_FILE" || {
-    echo "Ошибка скачивания скрипта"
-    exit 1
-}
-
 echo "Запуск процесса миграции..."
-python3 "$SCRIPT_FILE"
+curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/main.py | python
 
 echo "Очистка временных файлов..."
 deactivate
