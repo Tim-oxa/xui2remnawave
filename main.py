@@ -32,7 +32,7 @@ users = json.loads(xui.get(xui_url + f"/panel/api/inbounds/get/{inbound_id}").js
 for user in users:
     data = {}
 
-    if username_pattern.match(user["email"]):
+    if username_pattern.match(user["email"]) and len(user["email"]) >= 6:
         data.setdefault("username", user["email"])
     else:
         data.setdefault("username", user["id"].split("-")[0])
