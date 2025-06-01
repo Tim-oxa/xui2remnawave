@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import datetime as dt
 import httpx
 import json
