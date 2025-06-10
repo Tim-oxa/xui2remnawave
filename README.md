@@ -4,5 +4,5 @@
 !!! АЛЬФА ВЕРСИЯ !!!
 
 ```
-bash <(curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/run.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/refs/heads/test/run.sh)
 ```
