@@ -23,10 +23,12 @@ xui.post(xui_url + "/login", data={
 
 remna = httpx.Client(headers={
     "Content-Type": "application/json",
-    "X-Forwarded-Proto": "https",
-    "X-Forwarded-For": "127.0.0.1",
     "Authorization": "Bearer " + remna_token
 })
+
+if remna_url.startswith("http://"):
+    remna.headers["X-Forwarded-Proto"] = "https"
+    remna.headers["X-Forwarded-For"] = "127.0.0.1"
 
 username_pattern = re.compile("^[a-zA-Z0-9_-]+$")
 
