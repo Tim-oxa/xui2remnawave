@@ -20,7 +20,7 @@ echo "Установка зависимостей..."
 pip install httpx
 
 echo "Скачивание скрипта..."
-curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/main.py -o "$TEMP_FILE"
+curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/test/main.py -o "$TEMP_FILE"
 
 echo "Запуск..."
 python "$TEMP_FILE" < /dev/tty > /dev/tty
