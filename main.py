@@ -27,6 +27,8 @@ xui.post(xui_url + "/login", data={
 
 remna = httpx.Client(headers={
     "Content-Type": "application/json",
+    "X-Forwarded-Proto": "https",
+    "X-Forwarded-For": "127.0.0.1",
     "Authorization": "Bearer " + remna_token
 })
 
