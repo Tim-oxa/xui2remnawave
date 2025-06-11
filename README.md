@@ -3,7 +3,7 @@
 
 !!! АЛЬФА ВЕРСИЯ !!!
 
-Указывайте Remnawave panel url <code>http://127.0.0.1:3000</code>, если выполняете скрипт на одном сервере с панелью
+Указывайте <b>Remnawave panel url</b> <code>http://127.0.0.1:3000</code>, если выполняете скрипт на одном сервере с панелью
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/Tim-oxa/xui2remnawave/main/run.sh)
 ```
